@@ -8,7 +8,7 @@ const sass = require("gulp-sass")(require("node-sass"));
 const routes = {
   css: {
     watch: "src/scss/*",
-    src: "src/scss/styles.scss",
+    src: ["src/scss/styles.scss", "src/scss/reset.scss"],
     dest: "dest/css",
   },
 };
