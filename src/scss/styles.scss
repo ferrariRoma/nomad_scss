@@ -1,8 +1,14 @@
 @import "_variables";
+@import "_titles";
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap");
 
 * {
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 body {
@@ -28,9 +34,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @extend %minTitle;
     ul {
       display: flex;
-      text-transform: uppercase;
       font-size: 10px;
       li {
         cursor: pointer;
@@ -55,18 +61,78 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: white;
+  margin-bottom: 70px;
   h3 {
-    color: white;
     font-size: 40px;
     font-weight: 600;
     text-align: center;
     margin-bottom: 100px;
   }
   a {
+    width: 20%;
+
+    @extend %minTitle;
     text-decoration: none;
+    text-align: center;
     color: white;
-    font-size: 40px;
-    font-weight: 300;
+    font-size: 1em;
+
     border: 2px solid rgba(0, 0, 0, 0);
+    background-color: white;
+    padding: 15px 0px;
+    color: black;
+
+    transition: all 0.3s ease-in-out, background 0.7s linear;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+}
+
+.under-hero {
+  height: 75vh;
+  display: flex;
+  margin-bottom: 70px;
+  img {
+    background-size: cover;
+    background-position: center;
+  }
+  .under-hero__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $bg;
+    h4 {
+      @extend %minTitle;
+      margin-bottom: 10px;
+    }
+    h3 {
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    a {
+      border: 1px solid black;
+      padding: 20px;
+      @extend %minTitle;
+      font-size: 12px;
+    }
+  }
+  img,
+  div {
+    width: 50%;
+  }
+}
+
+.blog {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 60vh);
+  .blog__post {
   }
 }
