@@ -92,7 +92,7 @@ header {
 }
 
 .under-hero {
-  height: 75vh;
+  height: 50vh;
   display: flex;
   margin-bottom: 70px;
   img {
@@ -129,10 +129,38 @@ header {
 }
 
 .blog {
-  width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 60vh);
+  grid-template-columns: repeat(2, minmax(100px, 80%));
+  grid-auto-rows: 50vh;
+  width: 100%;
   .blog__post {
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .post__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    span{
+      @extend %minTitle;
+      font-size: 13px;
+      font-weight: 100;
+    }
+    h4 {
+      margin: 50px 30px;
+      font-size: 30px;
+      font-weight: 400;
+      text-align: center;
+    }
+    a {
+      border: 1px solid black;
+      padding: 20px;
+      @extend %minTitle;
+      font-size: 12px;
+    }
   }
 }
