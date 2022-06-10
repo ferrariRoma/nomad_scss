@@ -80,8 +80,21 @@ body {
 
     white-space: nowrap;
     overflow: hidden;
+
+    span {
+      animation: scrollText 10s linear infinite forwards;
+    }
   }
 }
 
 @keyframes scrollText {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(100px);
+  }
 }
